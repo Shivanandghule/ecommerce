@@ -23,6 +23,8 @@ public class Product {
 	private String product_name;
 	@Column(name="product_desc")
 	private String product_desc;
+	@Column(name="product_price")
+	private double product_price;
 	/**
 	 * 
 	 */
@@ -30,16 +32,21 @@ public class Product {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	/**
 	 * @param product_id
 	 * @param product_name
 	 * @param product_desc
+	 * @param product_price
 	 */
-	public Product(String product_name, String product_desc) {
+	public Product(long product_id, String product_name, String product_desc, double product_price) {
 		super();
+		this.product_id = product_id;
 		this.product_name = product_name;
 		this.product_desc = product_desc;
+		this.product_price = product_price;
 	}
+
 	/**
 	 * @return the product_id
 	 */
@@ -75,6 +82,26 @@ public class Product {
 	 */
 	public void setProduct_desc(String product_desc) {
 		this.product_desc = product_desc;
+	}
+
+	/**
+	 * @return the product_price
+	 */
+	public double getProduct_price() {
+		return product_price;
+	}
+
+	/**
+	 * @param product_price the product_price to set
+	 */
+	public void setProduct_price(double product_price) {
+		this.product_price = product_price;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", product_desc=" + product_desc
+				+ ", product_price=" + product_price + "]";
 	}
 	
 }

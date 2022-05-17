@@ -6,9 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 /**
  * @author Shiva
@@ -27,7 +25,7 @@ public class MyCart {
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@ManyToMany(targetEntity=Product.class)
+	@ManyToOne(targetEntity=Product.class)
 	@JoinColumn(name="product_id")
 	private Product product;
 	
